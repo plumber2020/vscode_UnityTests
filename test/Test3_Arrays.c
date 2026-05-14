@@ -5,7 +5,13 @@
 ========================================================================= */
 
 #include "header.h"
-#include "test.h"
+#include "unity.h"
+#include "unity_fixture.h"
+#include "unity_internals.h"
+
+#define TEST_INSTANCES
+#include "self_assessment_utils.h"
+#include "self_assessment_utils1.h"
 
 
 TEST_GROUP(Test3_Arrays);

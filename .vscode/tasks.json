@@ -35,10 +35,11 @@
         "${workspaceFolder}\\src\\*.c",
         "${workspaceFolder}\\test\\*.c",
         "${workspaceFolder}\\test\\test_runners\\*.c",
+        // Unity ----------------------------------------------------
         "${workspaceFolder}\\UnityTesting\\src\\*.c",
         "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src\\*.c",
         "${workspaceFolder}\\UnityTesting\\extras\\memory\\src\\*.c",
-
+        // Unity ----------------------------------------------------
         "-I", "${workspaceFolder}",
         "-I", "${workspaceFolder}\\include",
         "-I", "${workspaceFolder}\\UnityTesting\\src",
