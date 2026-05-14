@@ -1,0 +1,36 @@
+{
+    "env": {
+        "myIncludePath": [
+            "${workspaceFolder}\\",
+            "${workspaceFolder}\\include",
+            "${workspaceFolder}\\test"
+        ],
+        "myDefines": [
+        ]
+    },
+    
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${myIncludePath}"
+            ],
+            "defines": [
+                "${myDefines}"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x86",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${myIncludePath}"
+                ]
+            },
+            "compilerArgs": [
+            ]
+        }
+    ],
+    "version": 4,
+    "enableConfigurationSquiggles": false
+}
