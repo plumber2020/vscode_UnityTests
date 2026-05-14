@@ -32,15 +32,19 @@
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "${workspaceFolder}\\test\\*.c",
         "${workspaceFolder}\\src\\*.c",
+        "${workspaceFolder}\\test\\*.c",
+        "${workspaceFolder}\\test\\test_runners\\*.c",
         "${workspaceFolder}\\UnityTesting\\src\\*.c",
-        "-I",
-        "${workspaceFolder}",
-        "-I",
-        "${workspaceFolder}\\include",
-        "-I",
-        "${workspaceFolder}\\test",
+        "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src\\*.c",
+        "${workspaceFolder}\\UnityTesting\\extras\\memory\\src\\*.c",
+
+        "-I", "${workspaceFolder}",
+        "-I", "${workspaceFolder}\\include",
+        "-I", "${workspaceFolder}\\UnityTesting\\src",
+        "-I", "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src",
+        "-I", "${workspaceFolder}\\UnityTesting\\extras\\memory\\src",
+
         "-o",
         "${workspaceFolder}\\build\\test.exe"
       ],

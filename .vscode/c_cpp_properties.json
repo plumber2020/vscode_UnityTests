@@ -1,9 +1,12 @@
 {
     "env": {
         "myIncludePath": [
-            "${workspaceFolder}\\",
+            "${workspaceFolder}",
             "${workspaceFolder}\\include",
-            "${workspaceFolder}\\test"
+            "${workspaceFolder}\\test",
+            "${workspaceFolder}\\UnityTesting\\src",
+            "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src"
+
         ],
         "myDefines": [
         ]

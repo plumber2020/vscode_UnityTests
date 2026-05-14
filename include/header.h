@@ -1,7 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-int sum(int a, int b);
+
+int   iSum(int a, int b);
+float fSum(float a, float b);
 
 
 
