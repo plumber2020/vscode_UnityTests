@@ -4,18 +4,16 @@
     
 ========================================================================= */
 
+#ifndef TEST_HEADER_H
+#define TEST_HEADER_H
+
+#include "unity.h"
 #include "unity_fixture.h"
+#include "unity_internals.h"
+
+#define TEST_INSTANCES
+#include "self_assessment_utils.h"
+#include "self_assessment_utils1.h"
 
 
-static void RunAllTests(void)
-{
-  RUN_TEST_GROUP(Test1_Integers);
-  RUN_TEST_GROUP(Test2_Floats);
-  RUN_TEST_GROUP(Test3_Arrays);
-  
-}
-
-int main(int argc, const char * argv[])
-{
-  return UnityMain(argc, argv, RunAllTests);
-}
+#endif // TEST_HEADER_H

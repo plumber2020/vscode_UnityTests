@@ -1,6 +1,11 @@
+/* =========================================================================
+    Unity - A Test Framework for C
+
+    
+========================================================================= */
+
 #include "header.h"
-#include "unity.h"
-#include "unity_fixture.h"
+#include "test.h"
 
 
 TEST_GROUP(Test2_Floats);

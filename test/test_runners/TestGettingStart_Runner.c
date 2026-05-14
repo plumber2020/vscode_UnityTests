@@ -24,4 +24,6 @@ TEST_GROUP_RUNNER(Test2_Floats)
 TEST_GROUP_RUNNER(Test3_Arrays)
 {
   RUN_TEST_CASE(Test3_Arrays, testIntArrayWithinDeltaPointlessAndMessage);
+  RUN_TEST_CASE(Test3_Arrays, testNotEqualMemory2);
+  RUN_TEST_CASE(Test3_Arrays, testEqualStrings);
 }
