@@ -6,5 +6,6 @@
       "limits": "c",
       "stdio.h": "c",
       "limits.h": "c"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/abramov.d.a/Documents/VCcode_Workspace/vscode_UnityTests/UnityTesting"
 }

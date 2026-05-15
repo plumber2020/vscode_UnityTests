@@ -10,8 +10,8 @@
 #include "unity_internals.h"
 
 #define TEST_INSTANCES
-#include "self_assessment_utils.h"
-#include "self_assessment_utils1.h"
+#include "utils/self_assessment_utils.h"
+#include "utils/self_assessment_utils1.h"
 
 
 TEST_GROUP(Test3_Arrays);

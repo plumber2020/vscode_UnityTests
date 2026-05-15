@@ -33,8 +33,9 @@
         "-fdiagnostics-color=always",
         "-g",
         "${workspaceFolder}\\src\\*.c",
-        "${workspaceFolder}\\test\\*.c",
-        "${workspaceFolder}\\test\\test_runners\\*.c",
+        "${workspaceFolder}\\test\\groups\\test_GR01\\*.c",
+        "${workspaceFolder}\\test\\groups\\test_GR02\\*.c",
+        "${workspaceFolder}\\test\\runners\\*.c",
         // Unity ----------------------------------------------------
         "${workspaceFolder}\\UnityTesting\\src\\*.c",
         "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src\\*.c",
@@ -42,6 +43,7 @@
         // Unity ----------------------------------------------------
         "-I", "${workspaceFolder}",
         "-I", "${workspaceFolder}\\include",
+        "-I", "${workspaceFolder}\\test",
         "-I", "${workspaceFolder}\\UnityTesting\\src",
         "-I", "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src",
         "-I", "${workspaceFolder}\\UnityTesting\\extras\\memory\\src",
