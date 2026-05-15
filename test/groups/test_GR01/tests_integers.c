@@ -11,15 +11,9 @@
 
 TEST_GROUP(Test1_Integers);
 
-//----------------------------------------------------------
+TEST_SETUP(Test1_Integers) {}
 
-TEST_SETUP(Test1_Integers)
-{
-}
-
-TEST_TEAR_DOWN(Test1_Integers)
-{
-}
+TEST_TEAR_DOWN(Test1_Integers) {}
 
 //----------------------------------------------------------
 

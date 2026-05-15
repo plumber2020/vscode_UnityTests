@@ -11,15 +11,9 @@
 
 TEST_GROUP(Test2_Floats);
 
-//----------------------------------------------------------
+TEST_SETUP(Test2_Floats) {}
 
-TEST_SETUP(Test2_Floats)
-{
-}
-
-TEST_TEAR_DOWN(Test2_Floats)
-{
-}
+TEST_TEAR_DOWN(Test2_Floats) {}
 
 //----------------------------------------------------------
 
