@@ -3,7 +3,6 @@
 
 
 int main() {
-  int res = iSum(1, 3);
-  printf("HELLO? sum = %d\n", res);
+  printf("HELLO? sum = %d\n", 555);
   return 0;
 }
