@@ -36,4 +36,5 @@ TEST(Test1_Integers, iSumFunction_ShouldReturnTwoIfInputOnes)
 TEST(Test1_Integers, IgnoredTest)
 {
     TEST_IGNORE_MESSAGE("This Test Was Ignored On Purpose");
+
 }

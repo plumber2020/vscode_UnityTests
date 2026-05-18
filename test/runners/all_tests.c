@@ -14,7 +14,7 @@ static void RunAllTests(void)
   RUN_TEST_GROUP(Test3_Arrays);
 
   RUN_TEST_GROUP(Test1_Mult);
-
+  RUN_TEST_GROUP(Test2_NewFunctions);
   
 }
 

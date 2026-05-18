@@ -3,6 +3,7 @@
         "myIncludePath": [
             "${workspaceFolder}",
             "${workspaceFolder}\\include",
+            "${workspaceFolder}\\src",
             "${workspaceFolder}\\test",
             "${workspaceFolder}\\UnityTesting\\src",
             "${workspaceFolder}\\UnityTesting\\extras\\fixture\\src"
