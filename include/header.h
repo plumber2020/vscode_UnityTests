@@ -8,7 +8,6 @@ float fSum(float a, float b);
 int   iMult(int a, int b);
 float fMult(float a, float b);
 
-#include "if_switch.h"
 
 
 #endif // HEADER_H
