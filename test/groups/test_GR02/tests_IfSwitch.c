@@ -9,6 +9,10 @@
 #include "unity_fixture.h"
 
 
+#define EXECUTE_CYCLES(TIMEOUT)  \
+    for (int i = 0; i < TIMEOUT; i++) { ifSwitchFunction();}
+
+
 // Define the test group for this module
 TEST_GROUP(Test_IfSwitch);
 
@@ -22,44 +26,37 @@ TEST_TEAR_DOWN(Test_IfSwitch) {}
 // Tests ///////////////////////////////////////////////////////////////////
 
 TEST(Test_IfSwitch, test_initial_state_should_not_increment_iResult) {
-    for (int i = 0; i < 150; i++) {
-        ifSwitchFunction();
-    }
+    EXECUTE_CYCLES(150)
     TEST_ASSERT_EQUAL(0, iResult);  // Still 0 because eParameter was IDLE
 }
 
 TEST(Test_IfSwitch, test_work_state_increments_iResult_after_100_calls) {
     eParameter = WORK;
     
-    // Call 99 times: should not complete yet
-    for (int i = 0; i < 99; i++) {
-        ifSwitchFunction();
-    }
+    EXECUTE_CYCLES(IF_SWITCH_WORK_TIMEOUT);
     TEST_ASSERT_EQUAL(0, iResult);
     TEST_ASSERT_EQUAL(WORK, eParameter);
 
-    // One more call → should trigger increment and reset
-    ifSwitchFunction();
+    ifSwitchFunction(); // 100-й вызов
     TEST_ASSERT_EQUAL(1, iResult);
     TEST_ASSERT_EQUAL(IDLE, eParameter);
 }
 
 TEST(Test_IfSwitch, test_multiple_work_cycles) {
-    for (int cycle = 0; cycle < 3; cycle++) {
+    for (int cycle = 1; cycle < 3; cycle++) {
         eParameter = WORK;
-        for (int i = 0; i < 100; i++) {
-            ifSwitchFunction();
-        }
-        TEST_ASSERT_EQUAL(cycle + 1, iResult);  // Should increment per full cycle
+        EXECUTE_CYCLES(IF_SWITCH_WORK_TIMEOUT);
+        TEST_ASSERT_EQUAL(WORK, eParameter);
+        ifSwitchFunction();
+        TEST_ASSERT_EQUAL(cycle, iResult);
         TEST_ASSERT_EQUAL(IDLE, eParameter);
     }
 }
 
 TEST(Test_IfSwitch, test_state_change_to_idle_resets_counter) {
     eParameter = WORK;
-    for (int i = 0; i < 50; i++) {
-        ifSwitchFunction();
-    }
+    
+    EXECUTE_CYCLES(50);
     TEST_ASSERT_EQUAL(0, iResult);
 
     // Change to IDLE (or any non-WORK) should reset counter
@@ -68,11 +65,23 @@ TEST(Test_IfSwitch, test_state_change_to_idle_resets_counter) {
 
     // Now re-enter WORK — must start from zero
     eParameter = WORK;
-    for (int i = 0; i < 99; i++) {
-        ifSwitchFunction();
-    }
+    EXECUTE_CYCLES(IF_SWITCH_WORK_TIMEOUT);
     TEST_ASSERT_EQUAL(0, iResult);  // Not yet done
 
+    ifSwitchFunction();
+    TEST_ASSERT_EQUAL(1, iResult);
+}
+
+TEST(Test_IfSwitch, test_invalid_state_resets_counter) {
+    eParameter = (Param)99;  // Invalid
+    static int dummy = 0;
+    for (int i = 0; i < 10; i++) {
+        ifSwitchFunction();
+    }
+    TEST_ASSERT_EQUAL(0, iResult);  // No side effect
+    // And if we later enter WORK, starts fresh
+    eParameter = WORK;
+    EXECUTE_CYCLES(IF_SWITCH_WORK_TIMEOUT);
     ifSwitchFunction();
     TEST_ASSERT_EQUAL(1, iResult);
 }

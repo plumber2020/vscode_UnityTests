@@ -23,6 +23,7 @@ TEST_GROUP_RUNNER(Test2_NewFunctions)
     RUN_TEST_CASE(Test_IfSwitch, test_work_state_increments_iResult_after_100_calls);
     RUN_TEST_CASE(Test_IfSwitch, test_multiple_work_cycles);
     RUN_TEST_CASE(Test_IfSwitch, test_state_change_to_idle_resets_counter);
+    RUN_TEST_CASE(Test_IfSwitch, test_invalid_state_resets_counter);
     
 } 
 
