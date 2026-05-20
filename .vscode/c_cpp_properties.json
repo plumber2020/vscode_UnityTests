@@ -2,7 +2,8 @@
     "env": {
         "myIncludePath": [
             "${workspaceFolder}",
-            "${workspaceFolder}\\include",
+            "${workspaceFolder}\\bark",
+            "${workspaceFolder}\\bark\\common",
             "${workspaceFolder}\\src",
             "${workspaceFolder}\\test",
             "${workspaceFolder}\\UnityTesting\\src",
